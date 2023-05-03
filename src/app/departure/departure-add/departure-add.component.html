@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <div class="row">
+      <main class="col-12 ms-sm-auto px-md-4 mb-5">
+        <a (click)="goBack()">
+          <i class="material-symbols-outlined ms-5 back" data-bs-toggle="tooltip" data-bs-placement="right"
+            data-bs-title="Volver atrás">arrow_back_ios</i>
+        </a>  
+        <section class="ftco-section">
+            <div class="container mb-5">
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-6 col-lg-6">
+                  <div class="login-wrap p-4 p-md-5">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                      <i class="material-symbols-outlined">departure_board</i>
+                    </div>
+                    <h3 class="text-center mb-5">Añadir salida</h3>
+                    <form class="login-form" (ngSubmit)="addDeparture()" [formGroup]="myForm" autocomplete="off">
+                      <div class="form-group mt-3">
+                        <label class="col-form-label" for="departureDate">Fecha de salida</label>
+                        <input type="datetime-local" class="form-control rounded-left" name="departureDate" formControlName="departureDate" required>
+                      </div>
+                      <div class="form-group mt-3">
+                        <label class="col-form-label" for="destination">Destino</label>
+                        <input type="text" class="form-control rounded-left" name="destination" formControlName="destination" required>
+                        <span class="form-text text-danger" *ngIf="notValid('destination')">
+                                El documento de identidad del socio debe tener como mínimo 2 letras y como máximo 30
+                        </span>
+                      </div>
+                      <div class="form-group mt-3">
+                        <label class="col-form-label" for="boatId">Barco</label>
+                        <select class="form-control rounded-left" name="boatId" formControlName="boatId" required>
+                            <option *ngFor="let boat of boats" [value]="boat.id">
+                                {{boat.plate}} - {{boat.name}}
+                            </option>
+                        </select>
+                      </div>
+                      
+                      <div class="form-group mt-5 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary rounded green submit p-3 px-5" [disabled]="myForm.invalid">Enviar</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+  
+        </main>
+    
+      </div>
+    </div>

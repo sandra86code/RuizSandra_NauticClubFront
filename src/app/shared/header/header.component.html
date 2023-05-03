@@ -1,0 +1,30 @@
+
+<div
+  class="col-12 bg-white d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom sticky-top">
+  <div class="col-2">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+      class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      <img class="bi mx-5 mt-2" width="170" aria-label="Atos Club Nautico" src="assets/img/logo.png">
+    </a>
+  </div>
+  <div class="col-8">
+    <ul class="nav col-11 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a class="nav-link px-2 mx-3 font-weight-bold" routerLink="/" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact:true}">Inicio</a></li>
+      <li><a class="nav-link px-2 mx-3 font-weight-bold" routerLink="/members" routerLinkActive="active">Socios</a></li>
+      <li><a class="nav-link px-2 mx-3 font-weight-bold" routerLink="/captains" routerLinkActive="active">Capitanes</a></li>
+      <li><a class="nav-link px-2 mx-3 font-weight-bold" routerLink="/boats" routerLinkActive="active">Barcos</a></li>
+      <li><a class="nav-link px-2 mx-3 font-weight-bold" routerLink="/departures" routerLinkActive="active">Salidas</a>
+      </li>
+    </ul>
+  </div>
+  <div class="col-2">
+    <div class="button-group flex-right" *ngIf="!(isLoggedIn$|async) else logOut">
+      <button type="button" class="btn btn-secondary btn-lg green me-2" routerLink="/">Acceder</button>
+    </div>
+    <ng-template #logOut>
+        <a routerLink="/" (click)="logout()" class="flex-right text-end"><i class="material-symbols-outlined big-icon">logout</i></a>
+      </ng-template>
+  </div>
+
+</div>

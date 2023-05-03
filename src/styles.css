@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+a { color: #20687b !important; }
+h1, h2, h3 { color: #225363 !important;}
+.nav-link{color: #143746; font-size: 1.5rem;}
+.button-active { color: #fff; background-color: #b08f26; border-color: #b08f26 !important} 
+.active { color: #cc9a05 !important; } 
+.big-icon {font-size: 48px; }
+.special-inline { display: inline-block}
+button.green {background-color: #17808c !important; border: none; border-radius: 8px; color: white;}
+.material-symbols-outlined {font-size: 50px; color: #143746 !important} 
+.back {font-size: 3rem; color: #143746; } 
+.back:hover{ cursor: pointer;}
+.login-wrap {background-color: #d1dddf;}

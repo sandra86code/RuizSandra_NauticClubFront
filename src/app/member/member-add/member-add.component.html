@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="row">
+      <main class="col-12 ms-sm-auto px-md-4 mb-5">
+        <a (click)="goBack()">
+          <i class="material-symbols-outlined ms-5 back" data-bs-toggle="tooltip" data-bs-placement="right"
+            data-bs-title="Volver atrás">arrow_back_ios</i>
+        </a>  
+        <section class="ftco-section">
+            <div class="container mb-5">
+              <div class="row d-flex justify-content-center">
+                <div class="col-md-6 col-lg-6">
+                  <div class="login-wrap p-4 p-md-5">
+                    <div class="icon d-flex align-items-center justify-content-center">
+                      <i class="material-symbols-outlined">people</i>
+                    </div>
+                    <h3 class="text-center mb-5">Añadir socio</h3>
+                    <form class="login-form" (ngSubmit)="addMember()" [formGroup]="myForm" autocomplete="off">
+                      <div class="form-group mt-3">
+                        <label class="col-form-label" for="name">Nombre</label>
+                        <input type="text" class="form-control rounded-left" name="name" formControlName="name" required>
+                        <span class="form-text text-danger" *ngIf="notValid('name')">
+                                El nombre del socio debe tener como mínimo 2 letras y como máximo 50
+                        </span>
+                      </div>
+                      <div class="form-group mt-3">
+                        <label class="col-form-label" for="idNumber">Documento de identidad</label>
+                        <input type="text" class="form-control rounded-left" name="idNumber" formControlName="idNumber" required>
+                        <span class="form-text text-danger" *ngIf="notValid('idNumber')">
+                                El documento de identidad del socio debe tener como mínimo 8 letras y como máximo 20
+                        </span>
+                      </div>
+                      <div class="form-group mt-3">
+                        <label class="col-form-label" for="email">Email</label>
+                        <input type="email" class="form-control rounded-left" name="email" formControlName="email" required>
+                        <span class="form-text text-danger" *ngIf="notValid('email')">
+                                Debes introducir un email
+                        </span>
+                      </div>
+                      <div class="form-group mt-3">
+                        <label class="col-form-label" for="phone">Teléfono</label>
+                        <input type="text" class="form-control rounded-left" name="phone" formControlName="phone" required>
+                        <span class="form-text text-danger" *ngIf="notValid('phone')">
+                                Debe introducir un teléfono como mínimo de 9 dígitos
+                        </span>
+                    </div>
+                      <div class="form-group mt-5 d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary rounded green submit p-3 px-5" [disabled]="myForm.invalid">Enviar</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+  
+        </main>
+    
+      </div>
+    </div>
